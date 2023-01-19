@@ -165,7 +165,7 @@ const descriptionContainer = document.getElementById("description-container");
     });
 
     let numUnFunded = unFunded.length;
-    let rallyCry = document.createElement("div");
+    let rallyCry = document.createElement("p");
     
 // create a string that explains the number of unfunded games using the ternary operator
 
@@ -193,11 +193,31 @@ const firstGameContainer = document.getElementById("first-game");
 const secondGameContainer = document.getElementById("second-game");
 
 const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
-    return item2.pledged - item1.pledged;
+    return item1.pledged - item2.pledged;
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let name, desc, pl, goal, bkrs, img = sortedGames[0];
+let names, descs, pls, goals, bkrss, imgs = sortedGames[1];
 
-// create a new element to hold the name of the top pledge game, then append it to the correct element
+
+let nameOne = document.createElement("h2"); 
+let nameTwo = document.createElement("h2"); 
+
+// // create a new element to hold the name of the top pledge game, then append it to the correct element
+
+[nameOne,...rest] = name; 
+[first,nameTwo,...rest] = names; 
+
+
+//nameOne.classList.add("game-card"); 
+//nameTwo.classList.add("game-card"); 
+
+firstGameContainer.innerHTML.nameOne; 
+secondGameContainer.innerHTML.nameTwo; 
+
+firstGameContainer.append(nameOne); 
+secondGameContainer.append(nameTwo); 
+
 
 // do the same for the runner up item
