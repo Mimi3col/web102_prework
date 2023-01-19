@@ -38,6 +38,7 @@ function addGamesToPage(games) {
             <h1>${games[index].name}</h1>
             <img class = "game-img" src="${games[index].img}"> </img> 
             <p>${games[index].description}</p>
+            <b>${games[index].goal} : ${games[index].pledged}</b>
             `;
 
         newCard.innerHTML = display; 
@@ -159,11 +160,29 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
+    let unFunded = GAMES_JSON.filter ( (GAMES_JSON) => { 
+        return GAMES_JSON.goal > GAMES_JSON.pledged;
+    });
+
+    let numUnFunded = unFunded.length;
 
 // create a string that explains the number of unfunded games using the ternary operator
 
+let displayUnFunded = (Number(numUnFunded) > 1) ? `A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} games remain unfunded. We need your help to fund these Amazing Games!!` : `A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} game remain unfunded. We need your help to fund this Amazing Game!!  `;
+
+//let endOne = `Currently, ${numUnFunded.toLocaleString('en-US')} games remain unfunded. We need your help to fund these Amazing Games!!`;
+
+// if(unFunded != 1){
+//     displayUnFunded += `Currently, ${numUnFunded.toLocaleString('en-US')} games remain unfunded. We need your help to fund these Amazing Games!!`; 
+// }
+
+
+
+
 
 // create a new DOM element containing the template string and append it to the description container
+
+descriptionContainer.append(displayUnFunded); 
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
