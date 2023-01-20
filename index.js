@@ -40,7 +40,7 @@ function addGamesToPage(games) {
             <p>${games[index].description}</p>
             <b>${games[index].goal} : ${games[index].pledged}</b>
             `;
-
+// want to add something in about reaching the goal or not;
         newCard.innerHTML = display; 
         gamesContainer.append(newCard); 
 
@@ -199,9 +199,9 @@ const secondGameContainer = document.getElementById("second-game");
 //     return item2.pledged - item1.pledged;
 // });
 
-const sortedGames = JSON.parse(GAMES_DATA);
+//const sortedGames = JSON.parse(GAMES_DATA);
 
-sortedGames.sort((first,second) => second.pledged - first.pledged);
+const sortedGames = GAMES_JSON.sort((first,second) => {return second.pledged - first.pledged});
 
 
 // use destructuring and the spread operator to grab the first and second games
@@ -213,7 +213,10 @@ sortedGames.sort((first,second) => second.pledged - first.pledged);
 
 //console.log(topGame);
 
+//const [name1, desc1, pl1, goal1, bkrs1, img1] = sortedGames[0];
+//let name2, desc2, pl2, goal2, bkrs2, img2;
 
+//[name1, desc1, pl1, goal1, bkrs1, img1] = sortedGames[0];
 
 let firstGame = sortedGames[0].name;
 let secondGame = sortedGames[1].name;
