@@ -2,10 +2,9 @@
  * Challenge 2: Review the provided code. The provided code includes:
  * -> Statements that import data from games.js
  * -> A function that deletes all child elements from a parent element in the DOM
-*/
+ */
 
 // import the JSON data about the crowd funded games from the games.js file
-import games from './games.js';
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
@@ -160,28 +159,28 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
-    let unFunded = GAMES_JSON.filter ( (GAMES_JSON) => { 
+    let unFunded = GAMES_JSON.filter ( (GAMES_JSON) => {
         return GAMES_JSON.goal > GAMES_JSON.pledged;
     });
 
     let numUnFunded = unFunded.length;
     let rallyCry = document.createElement("p");
-    
+
 // create a string that explains the number of unfunded games using the ternary operator
 
 // I just wanted a cleaner  ? statement
      let multiUnFunded = ` 
      A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} games remain unfunded. We need your help to fund these Amazing Games!!
      `;
-    
+
       let singUnFunded = `
     A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} game remain unfunded. We need your help to fund this Amazing Game!!
     `;
 
-    let displayUnFunded = (Number(numUnFunded) > 1) ? multiUnFunded : singUnFunded;  
+    let displayUnFunded = (Number(numUnFunded) > 1) ? multiUnFunded : singUnFunded;
 
 // create a new DOM element containing the template string and append it to the description container
-    rallyCry.outerHTML.displayUnFunded; 
+    const {displayUnFunded: displayUnFunded1} = rallyCry.outerHTML;
     descriptionContainer.append(displayUnFunded); 
 
 /************************************************************************************
@@ -192,32 +191,32 @@ const descriptionContainer = document.getElementById("description-container");
 const firstGameContainer = document.getElementById("first-game");
 const secondGameContainer = document.getElementById("second-game");
 
-const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
-    return item1.pledged - item2.pledged;
-});
+
+// const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
+//     return item2.pledged - item1.pledged;
+// });
+
+const sortedGames = JSON.parse(GAMES_DATA);
+
+sortedGames.sort((first,second) => second.pledged - first.pledged);
+
 
 // use destructuring and the spread operator to grab the first and second games
-let name, desc, pl, goal, bkrs, img = sortedGames[0];
-let names, descs, pls, goals, bkrss, imgs = sortedGames[1];
+
+const [name, desc, pl, goal, bkrs, img] = sortedGames;
+
+let [topGame,secondGame,...other] = name[0];
 
 
-let nameOne = document.createElement("h2"); 
-let nameTwo = document.createElement("h2"); 
+console.log(topGame);
+
+
+
+//let topGame = sortedGames[0].name;
 
 // // create a new element to hold the name of the top pledge game, then append it to the correct element
 
-[nameOne,...rest] = name; 
-[first,nameTwo,...rest] = names; 
-
-
-//nameOne.classList.add("game-card"); 
-//nameTwo.classList.add("game-card"); 
-
-firstGameContainer.innerHTML.nameOne; 
-secondGameContainer.innerHTML.nameTwo; 
-
-firstGameContainer.append(nameOne); 
-secondGameContainer.append(nameTwo); 
-
+const {topGame:temp} = firstGameContainer.innerHTML;
+firstGameContainer.append(topGame);
 
 // do the same for the runner up item
