@@ -5,6 +5,7 @@
  */
 
 // import the JSON data about the crowd funded games from the games.js file
+
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
@@ -78,7 +79,7 @@ let totalBackers = GAMES_JSON.reduce((acc, GAMES_JSON) =>{
  }, 0); 
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-contributionsCard.append(totalBackers.toLocaleString('en-US')); 
+contributionsCard.append('$'+totalBackers.toLocaleString());
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
@@ -87,7 +88,7 @@ let totalRaised = GAMES_JSON.reduce((acc, GAMES_JSON) => {
     return acc + GAMES_JSON.pledged;
 }, 0); 
 // set inner HTML using template literal
-raisedCard.append(totalRaised.toLocaleString('en-US')); 
+raisedCard.append('$'+totalRaised.toLocaleString());
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
@@ -136,7 +137,9 @@ function showAllGames() {
     deleteChildElements(gamesContainer);
 
     // add all games from the JSON data to the DOM
-    addGamesToPage(GAMES_JSON);
+    //addGamesToPage(GAMES_JSON);
+    // wanted to add them sorted
+    addGamesToPage(sortedGames);
 }
 
 // select each button in the "Our Games" section
@@ -203,20 +206,23 @@ sortedGames.sort((first,second) => second.pledged - first.pledged);
 
 // use destructuring and the spread operator to grab the first and second games
 
-const [name, desc, pl, goal, bkrs, img] = sortedGames;
+//const [name, desc, pl, goal, bkrs, img] = sortedGames;
 
-let [topGame,secondGame,...other] = name[0];
-
-
-console.log(topGame);
+//const [topGame,secondGame,...other] = name[0];
 
 
+//console.log(topGame);
 
-//let topGame = sortedGames[0].name;
+
+
+let firstGame = sortedGames[0].name;
+let secondGame = sortedGames[1].name;
 
 // // create a new element to hold the name of the top pledge game, then append it to the correct element
 
-const {topGame:temp} = firstGameContainer.innerHTML;
-firstGameContainer.append(topGame);
+const {firstGame:temp} = firstGameContainer.innerHTML;
+const {secondGame:temp1} = secondGameContainer.innerHTML;
+firstGameContainer.append(firstGame);
+secondGameContainer.append(secondGame);
 
 // do the same for the runner up item
