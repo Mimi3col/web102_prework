@@ -36,13 +36,21 @@ function addGamesToPage(games) {
 
         const  display = `
             <h1>${games[index].name}</h1>
-            <img class = "game-img" src="${games[index].img}"> </img> 
+            <img class = "game-img" src="${games[index].img}" alt=""> 
             <p>${games[index].description}</p>
-            <b>${games[index].goal} : ${games[index].pledged}</b>
             `;
-// want to add something in about reaching the goal or not;
-        newCard.innerHTML = display; 
-        gamesContainer.append(newCard); 
+        // want to add something in about reaching the goal or not
+        //newCard.innerHTML = display;
+
+
+        const goalReached = `<p style="color:MediumSeaGreen;">Goal Reached </p>`;
+        const goalRemaining = (Number(games[index].goal) - Number(games[index].pledged)).toString();
+        const goalNotReached = `<p style="color:Tomato;"> ${goalRemaining} Remaining</p>`
+        const goalText = (games[index].goal >= games[index].pledged) ? goalNotReached : goalReached;
+
+        newCard.innerHTML = display + goalText;
+        gamesContainer.append(newCard);
+        //gamesContainer.append(goalText);
 
         // create a new div element, which will become the game card
 
