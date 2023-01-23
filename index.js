@@ -18,6 +18,11 @@ function deleteChildElements(parent) {
     }
 }
 
+
+
+
+
+
 /*****************************************************************************
  * Challenge 3: Add data about each game as a card to the games-container
  * Skills used: DOM manipulation, for loops, template literals, functions
@@ -35,8 +40,8 @@ function addGamesToPage(games) {
         newCard.classList.add("game-card"); 
 
         const  display = `
-            <h1>${games[index].name}</h1>
-            <img class = "game-img" src="${games[index].img}" alt=""> 
+            <img class = "game-img" src="${games[index].img}" alt="">
+            <h3>${games[index].name}</h3> 
             <p>${games[index].description}</p>
             `;
         // want to add something in about reaching the goal or not
@@ -183,7 +188,6 @@ const descriptionContainer = document.getElementById("description-container");
      let multiUnFunded = ` 
      A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} games remain unfunded. We need your help to fund these Amazing Games!!
      `;
-
       let singUnFunded = `
     A total of ${totalRaised.toLocaleString('en-US')} Has been raised for ${numGames.toLocaleString('en-US')} games. Currently, ${numUnFunded.toLocaleString('en-US')} game remain unfunded. We need your help to fund this Amazing Game!!
     `;
