@@ -18,11 +18,6 @@ function deleteChildElements(parent) {
     }
 }
 
-
-
-
-
-
 /*****************************************************************************
  * Challenge 3: Add data about each game as a card to the games-container
  * Skills used: DOM manipulation, for loops, template literals, functions
@@ -218,10 +213,15 @@ const sortedGames = GAMES_JSON.sort((first,second) => {return second.pledged - f
 // use destructuring and the spread operator to grab the first and second games
 const [firstGame, secondGame, ...other] = sortedGames;
 
+const firstGameImage = `<img src= ${firstGame.img} width="300" alt=""> <br>`
+
 // // create a new element to hold the name of the top pledge game, then append it to the correct element
 let firstGameDiv = document.createElement('div');
-firstGameDiv.innerHTML = `${firstGame.name}`;
+firstGameDiv.innerHTML =`${firstGameImage}`+ `${firstGame.name}`;
 firstGameContainer.append(firstGameDiv);
+// adding in the image of the game
+
+
 
 // do the same for the runner up item
 let secondGameDiV = document.createElement('div');

@@ -80,3 +80,7 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px #f6f4f4;
+}
