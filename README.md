@@ -24,8 +24,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='assets/Screen%20Recording%202023-02-04%20at%202.52.51%20PM.mov' title='Still Image' width='' alt='Video Walkthrough' />
-
+<img src='https://giphy.com/gifs/bmjNUAFRGcgXhqqiU6' title='walk Through' width='' alt='Video Walkthrough' />
 
 
 ## Notes
