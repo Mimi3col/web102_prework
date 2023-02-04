@@ -214,7 +214,7 @@ const sortedGames = GAMES_JSON.sort((first,second) => {return second.pledged - f
 const [firstGame, secondGame, ...other] = sortedGames;
 
 const firstGameImage = `<img src= ${firstGame.img} width="300" alt=""> <br>`
-
+const secondGameImage = `<img src= ${secondGame.img} width="300" alt=""> <br>`
 // // create a new element to hold the name of the top pledge game, then append it to the correct element
 let firstGameDiv = document.createElement('div');
 firstGameDiv.innerHTML =`${firstGameImage}`+ `${firstGame.name}`;
@@ -225,5 +225,5 @@ firstGameContainer.append(firstGameDiv);
 
 // do the same for the runner up item
 let secondGameDiV = document.createElement('div');
-secondGameDiV.innerHTML = `${secondGame.name}`;
+secondGameDiV.innerHTML = `${secondGameImage}`+ `${secondGame.name}`;
 secondGameContainer.append(secondGameDiV);
