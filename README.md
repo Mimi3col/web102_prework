@@ -24,9 +24,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='assets/Screenshot%202023-02-04%20at%201.51.56%20PM.png' title='Still Image' width='' alt='Video Walkthrough' />
+<img src='assets/Screen%20Recording%202023-02-04%20at%202.52.51%20PM.mov' title='Still Image' width='' alt='Video Walkthrough' />
 
-![Kapture 2023-02-04 at 13.54.04.gif](..%2F..%2F..%2F..%2Fprivate%2Fvar%2Ffolders%2Fsk%2Fg2nrj5w91230zyl24rhm8xd00000gn%2FT%2F316b0afd493c73f56c15a0bd0b97911e%2FKapture%202023-02-04%20at%2013.54.04.gif)
+
+
 ## Notes
 
 Describe any challenges encountered while building the app.
