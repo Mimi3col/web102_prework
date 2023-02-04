@@ -24,7 +24,8 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://giphy.com/gifs/bmjNUAFRGcgXhqqiU6' title='walk Through' width='' alt='Video Walkthrough' />
+![Alt Text](https://media.giphy.com/media/oTFnwIEF6lsMKu7ZdF/giphy.gif)
+
 
 
 ## Notes
